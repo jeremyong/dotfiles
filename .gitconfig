@@ -1,0 +1,10 @@
+[user]
+	name = Jeremy Ong
+	email = jeremy@playmesh.com
+[core]
+	editor = vim
+[color]
+	diff = always
+	branch = always
+	status = always
+
