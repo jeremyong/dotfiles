@@ -1,10 +1,8 @@
-xset +fp /usr/share/fonts/local &
-xset fp rehash &
-xset r rate 200 40 &
-xrdb -merge ~/.Xresources &
 xsetroot -cursor_name left_ptr &
-~/.screenlayout/dual-head.sh &
-xscreensaver -no-splash &
+xrdb -merge ~/.Xresources &
 xmodmap ~/.Xmodmap &
+xset r rate 170 30 &
 tray &
+urxvt &
+# redshift -l 32.6:-117.0 -t 5700:3600 -g 0.8 &
 exec xmonad

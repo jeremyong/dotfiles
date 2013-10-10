@@ -14,28 +14,47 @@ ZSH_THEME="robbyrussell"
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
-# Comment this out to disable weekly auto-update checks
+# Comment this out to disable bi-weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
 
+# Uncomment to change how often before auto-updates occur? (in days)
+# export UPDATE_ZSH_DAYS=13
+
 # Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
+DISABLE_LS_COLORS="false"
 
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
+# Uncomment following line if you want to disable command autocorrection
+# DISABLE_CORRECTION="true"
+
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
+
+# Uncomment following line if you want to disable marking untracked files under
+# VCS as dirty. This makes repository status check for large repositories much,
+# much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git archlinux)
+plugins=(git archlinux ruby)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:~/.cabal/bin:~/.xmonad/bin:$(ruby -rubygems -e "puts Gem.user_dir")/bin
 
-export PATH=$PATH:~/.cabal/bin:~/.xmonad/bin
-
-alias emacs="emacs -nw"
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+alias d="cd ~/developer"
+alias gfu="git fetch upstream"
+alias gfo="git fetch origin"
+alias gri="git rebase -i HEAD~"
+alias grm="git rebase upstream/master"
+alias s="cd ~/developer/spbr"
+alias gpu="git push upstream master"
+alias gpo="git push origin master"
+alias b="cd ~/developer/spbr-build"
+alias c="cmake ../spbr -G 'Eclipse CDT4 - Unix Makefiles' -DCMAKE_CXX_COMPILER_ARG1=-std=c++11"
